@@ -14,7 +14,7 @@ const Signup = ({ handleSignup }) => {
         if (email && password && firstName && lastName) {
             handleSignup(email, password, firstName, lastName);
         } else {
-            alert('Tous les champs doivent être remplis');
+            alert('All fields must be filled out.');
         }
     };
 
@@ -35,7 +35,7 @@ const Signup = ({ handleSignup }) => {
                 }}
             >
                 <Typography variant="h4" component="h1" style={{ marginBottom: '20px', color: '#1976d2' }}>
-                    Créer un compte
+                    Create an Account
                 </Typography>
 
                 <form onSubmit={handleSubmit} style={{ width: '100%' }}>
@@ -44,12 +44,12 @@ const Signup = ({ handleSignup }) => {
                         margin="normal"
                         required
                         fullWidth
-                        label="Prénom"
+                        label="First Name"
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
                         sx={{
                             '& .MuiOutlinedInput-root': {
-                                borderRadius: '10px', /* Coins plus arrondis */
+                                borderRadius: '10px',
                             },
                         }}
                     />
@@ -58,12 +58,12 @@ const Signup = ({ handleSignup }) => {
                         margin="normal"
                         required
                         fullWidth
-                        label="Nom"
+                        label="Last Name"
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
                         sx={{
                             '& .MuiOutlinedInput-root': {
-                                borderRadius: '10px', /* Coins plus arrondis */
+                                borderRadius: '10px',
                             },
                         }}
                     />
@@ -78,12 +78,12 @@ const Signup = ({ handleSignup }) => {
                         onChange={(e) => setEmail(e.target.value)}
                         sx={{
                             '& .MuiOutlinedInput-root': {
-                                borderRadius: '10px', /* Coins plus arrondis */
+                                borderRadius: '10px',
                             },
                         }}
                     />
                     <TextField
-                        label="Adresse"
+                        label="Address"
                         variant="outlined"
                         margin="normal"
                         fullWidth
@@ -92,7 +92,7 @@ const Signup = ({ handleSignup }) => {
                         onChange={(e) => setAddress(e.target.value)}
                         sx={{
                             '& .MuiOutlinedInput-root': {
-                                borderRadius: '10px', /* Coins plus arrondis */
+                                borderRadius: '10px',
                             },
                         }}
                     />
@@ -104,12 +104,12 @@ const Signup = ({ handleSignup }) => {
                         required
                         fullWidth
                         type="password"
-                        label="Mot de passe"
+                        label="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         sx={{
                             '& .MuiOutlinedInput-root': {
-                                borderRadius: '10px', /* Coins plus arrondis */
+                                borderRadius: '10px',
                             },
                         }}
                     />
@@ -128,11 +128,11 @@ const Signup = ({ handleSignup }) => {
                             transition: 'background-color 0.3s ease, transform 0.2s ease',
                             '&:hover': {
                                 backgroundColor: '#0056b3',
-                                transform: 'scale(1.05)', /* Effet de mise en avant au survol */
+                                transform: 'scale(1.05)',
                             },
                         }}
                     >
-                        S'inscrire
+                        Sign Up
                     </Button>
                 </form>
             </Box>

@@ -19,19 +19,19 @@ const SearchBar = ({ onSearch }) => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 marginTop: 2,
-                gap: 2, // Espace entre le champ de recherche et le bouton
+                gap: 2,
                 flexWrap: 'wrap',
             }}
         >
             <TextField
-                label="Rechercher un article"
+                label="Search for an Item"
                 variant="outlined"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 sx={{
-                    width: { xs: '100%', sm: 'auto' }, // Responsive: pleine largeur sur mobile, auto sinon
+                    width: { xs: '100%', sm: 'auto' },
                     '& .MuiOutlinedInput-root': {
-                        borderRadius: '20px', // Arrondir les coins du champ
+                        borderRadius: '20px',
                     },
                 }}
             />
@@ -47,11 +47,11 @@ const SearchBar = ({ onSearch }) => {
                     transition: 'background-color 0.3s ease, transform 0.2s ease',
                     '&:hover': {
                         backgroundColor: '#0056b3',
-                        transform: 'scale(1.05)', // Effet de survol
+                        transform: 'scale(1.05)',
                     },
                 }}
             >
-                Rechercher
+                Search
             </Button>
         </Box>
     );

@@ -5,12 +5,12 @@ const Favorites = ({ favorites, removeFromFavorites, goToHome }) => {
     return (
         <div style={{ padding: '20px' }}>
             <Typography variant="h4" align="center" gutterBottom>
-                Mes Favoris
+                My Favorites
             </Typography>
 
             {favorites.length === 0 ? (
                 <Typography variant="h6" align="center" style={{ marginTop: '20px' }}>
-                    Vous n'avez pas encore ajouté de produits à vos favoris.
+                    You haven't added any products to your favorites yet.
                 </Typography>
             ) : (
                 <Grid container spacing={4} justifyContent="center">
@@ -37,7 +37,7 @@ const Favorites = ({ favorites, removeFromFavorites, goToHome }) => {
                                             color="secondary"
                                             onClick={() => removeFromFavorites(product.id)} 
                                         >
-                                            Retirer des favoris
+                                            Remove from Favorites
                                         </Button>
                                     </Box>
                                 </CardContent>
@@ -47,7 +47,7 @@ const Favorites = ({ favorites, removeFromFavorites, goToHome }) => {
                 </Grid>
             )}
 
-            {/* Bouton Retour à l'accueil */}
+            {/* Back to Home button */}
             <div style={{ textAlign: 'center', marginTop: '20px' }}>
                 <Button
                     variant="contained"
@@ -61,7 +61,7 @@ const Favorites = ({ favorites, removeFromFavorites, goToHome }) => {
                         boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)', 
                         borderRadius: '8px'
                     }}>
-                    Retour à l'accueil
+                    Back to Home
                 </Button>
             </div>
         </div>

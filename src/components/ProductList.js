@@ -10,7 +10,7 @@ const ProductList = ({ products, favorites = [], addToFavorites, removeFromFavor
         <div>
             {noProducts ? (
                 <Typography variant="h6" align="center" style={{ marginTop: '20px' }}>
-                    Aucun produit trouvé.
+                    No products found.
                 </Typography>
             ) : (
                 <Grid container spacing={4} justifyContent="center" style={{ marginTop: 20 }}>
@@ -27,7 +27,7 @@ const ProductList = ({ products, favorites = [], addToFavorites, removeFromFavor
                                         boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                                     }}
                                 >
-                                    {/* Bouton Favoris en haut à droite */}
+
                                     <IconButton
                                         onClick={() =>
                                             isFavorite
@@ -40,44 +40,44 @@ const ProductList = ({ products, favorites = [], addToFavorites, removeFromFavor
                                             right: 10,
                                             color: isFavorite ? '#ff0000' : '#ccc',
                                         }}
-                                        aria-label={isFavorite ? 'Retirer des favoris' : 'Ajouter aux favoris'}
+                                        aria-label={isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
                                     >
                                         {isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
                                     </IconButton>
 
-                                    {/* Vérification de l'image */}
+
                                     <CardMedia
                                         component="img"
                                         height="200"
-                                        image={product.image || '/placeholder.png'} // Image par défaut si aucune n'est disponible
-                                        alt={product.name || 'Produit'}
+                                        image={product.image || '/placeholder.png'}
+                                        alt={product.name || 'Product'}
                                         onError={(e) => {
-                                            e.target.src = '/placeholder.png'; // Image de remplacement en cas d'erreur
+                                            e.target.src = '/placeholder.png';
                                         }}
                                     />
                                     <CardContent>
-                                        {/* Affichage des données du produit */}
-                                        <Typography variant="h6">{product.name}</Typography> {/* Nom du produit */}
+
+                                        <Typography variant="h6">{product.name}</Typography>
                                         <Typography variant="body2" color="textSecondary">
                                             Prix : {product.price} USD
                                         </Typography>
                                         <Typography variant="body2" color="textSecondary">
                                             Stock :{' '}
                                             {product.stock > 0
-                                                ? `${product.stock} disponibles`
-                                                : 'Stock épuisé'}
+                                                ? `${product.stock} Available`
+                                                : 'Out of Stock'}
                                         </Typography>
 
-                                        {/* Bouton Ajouter au panier */}
+
                                         <Box display="flex" alignItems="center" justifyContent="space-between" mt={2}>
                                             <Button
                                                 variant="contained"
                                                 color="primary"
                                                 onClick={() => addToCart(product)}
-                                                disabled={product.stock === 0} // Désactiver si stock épuisé
+                                                disabled={product.stock === 0}
                                                 style={{ width: '60%' }}
                                             >
-                                                {product.stock === 0 ? 'Indisponible' : 'Ajouter au panier'}
+                                                {product.stock === 0 ? 'Unavailable' : 'Add to Cart'}
                                             </Button>
                                         </Box>
                                     </CardContent>

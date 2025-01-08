@@ -11,7 +11,7 @@ import './Navbar.css';
 
 const Navbar = ({ setShowFavorites, setShowCart, setShowOrders, handleLogout, userEmail, cartItemCount, favoriteCount, goToHome, handleSearch, handleDeleteAccount, }) => {
     const [drawerOpen, setDrawerOpen] = useState(false);
-    const [searchQuery, setSearchQuery] = useState(''); // Ajout d'un état local pour gérer la requête de recherche
+    const [searchQuery, setSearchQuery] = useState('');
 
     const toggleDrawer = (open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -27,17 +27,17 @@ const Navbar = ({ setShowFavorites, setShowCart, setShowOrders, handleLogout, us
     const submitSearch = (e) => {
         e.preventDefault();
         if (handleSearch) {
-            handleSearch(searchQuery); // Appelle handleSearch en passant la requête
+            handleSearch(searchQuery);
         }
     };
     return (
         <>
-            {/* Barre de navigation supérieure */}
+            {/* Top Navigation Bar */}
             <AppBar position="static" className="navbar">
                 <Toolbar className="toolbar">
-                    {/* Bouton du menu hamburger */}
+                    {/* Hamburger Menu Button */}
                     <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
-                        <MenuIcon /> {/* Menu hamburger */}
+                        <MenuIcon /> {/* Hamburger Menu */}
                     </IconButton>
 
                     {/* Logo */}
@@ -52,11 +52,11 @@ const Navbar = ({ setShowFavorites, setShowCart, setShowOrders, handleLogout, us
                         </IconButton>
                     </div>
 
-                    {/* Barre de recherche et panier */}
+                    {/* Search Bar and Cart*/}
                     <div className="search-cart-container">
                         <form onSubmit={submitSearch} className="search-form">
                             <InputBase
-                                placeholder="Recherche..."
+                                placeholder="Search..."
                                 value={searchQuery}
                                 onChange={handleInputChange}
                                 inputProps={{'aria-label': 'search'}}
@@ -68,14 +68,14 @@ const Navbar = ({ setShowFavorites, setShowCart, setShowOrders, handleLogout, us
                         </form>
                         <IconButton color="inherit" onClick={setShowFavorites} style={{ marginLeft: '20px' }}>
                             <Badge badgeContent={favoriteCount} color="error">
-                                <FavoriteIcon style={{ fontSize: '2rem' }} /> {/* Taille de l'icône augmentée */}
+                                <FavoriteIcon style={{ fontSize: '2rem' }} />
                             </Badge>
                         </IconButton>
 
-                        {/* Panier toujours visible en haut à droite */}
+
                         <IconButton color="inherit" onClick={setShowCart} className="cart-button">
                             <Badge badgeContent={cartItemCount} color="error">
-                                <ShoppingCartIcon style={{ fontSize: '2rem' }} /> {/* Taille de l'icône augmentée */}
+                                <ShoppingCartIcon style={{ fontSize: '2rem' }} />
                             </Badge>
                         </IconButton>
                     </div>
@@ -87,45 +87,45 @@ const Navbar = ({ setShowFavorites, setShowCart, setShowOrders, handleLogout, us
                 <List onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
                     <ListItem button onClick={goToHome}>
                         <HomeIcon style={{marginRight: '10px'}}/>
-                        <ListItemText primary="Accueil"/>
+                        <ListItemText primary="Home"/>
                     </ListItem>
                     <ListItem button onClick={setShowCart}>
                         <ShoppingCartIcon style={{marginRight: '10px'}}/>
-                        <ListItemText primary="Panier"/>
+                        <ListItemText primary="Cart"/>
                         <Badge badgeContent={cartItemCount} color="error"/>
                     </ListItem>
-                    {/* Lien vers Favoris */}
+
                     <ListItem button onClick={setShowFavorites}>
                         <FavoriteIcon style={{marginRight: '10px'}}/>
-                        <ListItemText primary="Favoris"/>
+                        <ListItemText primary="Favorites"/>
                         <Badge badgeContent={favoriteCount} color="error"/>
                     </ListItem>
 
-                    {/* Lien vers Commandes */}
+
                     <ListItem button onClick={setShowOrders}>
                         <OrdersIcon style={{marginRight: '10px'}}/>
-                        <ListItemText primary="Voir les commandes"/>
+                        <ListItemText primary="View Orders"/>
                     </ListItem>
 
 
                     <ListItem button onClick={handleLogout}>
                         <LogoutIcon style={{marginRight: '10px'}}/>
-                        <ListItemText primary="Déconnexion"/>
+                        <ListItemText primary="Log Out"/>
                     </ListItem>
                     <button
                         onClick={handleDeleteAccount}
                         style={{
-                            marginTop: '10px', // Marges pour le positionner juste en dessous
+                            marginTop: '10px',
                             backgroundColor: '#f44336',
                             color: 'white',
                             border: 'none',
                             borderRadius: '5px',
                             padding: '10px 20px',
                             cursor: 'pointer',
-                            display: 'block' // Pour que le bouton soit en dessous et pas à côté
+                            display: 'block'
                         }}
                     >
-                        Supprimer le compte
+                        Delete Account
                     </button>
                 </List>
             </Drawer>

@@ -28,21 +28,21 @@ const Checkout = ({ cart, handleCheckout, goToHome }) => {
             </Typography>
             <Box display="flex" flexDirection="column" alignItems="center" mt={2}>
                 <TextField
-                    label="Adresse de livraison"
+                    label="Delivery Address"
                     variant="outlined"
                     value={shippingAddress}
                     onChange={(e) => setShippingAddress(e.target.value)}
                     style={{ marginBottom: '20px', width: '300px' }}
                 />
                 <TextField
-                    label="Numéro de carte"
+                    label="Card Number"
                     variant="outlined"
                     value={cardNumber}
                     onChange={(e) => setCardNumber(e.target.value)}
                     style={{ marginBottom: '20px', width: '300px' }}
                 />
                 <TextField
-                    label="Date d'expiration"
+                    label="Expiration Date"
                     variant="outlined"
                     value={expiryDate}
                     onChange={(e) => setExpiryDate(e.target.value)}
@@ -67,7 +67,7 @@ const Checkout = ({ cart, handleCheckout, goToHome }) => {
                         padding: '10px'
                     }}
                 >
-                    Payer
+                    Pay
                 </Button>
                 <Button
                     variant="contained"

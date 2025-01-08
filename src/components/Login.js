@@ -9,7 +9,7 @@ const Login = ({ handleLogin, toggleSignup }) => {
     const onSubmit = (e) => {
         e.preventDefault();
         if (!email || !password) {
-            setError('Veuillez remplir tous les champs');
+            setError('Please fill in all the fields.');
             return;
         }
         setError('');
@@ -43,7 +43,7 @@ const Login = ({ handleLogin, toggleSignup }) => {
                         required
                         fullWidth
                         id="email"
-                        label="Email"
+                        label="email"
                         name="email"
                         autoComplete="email"
                         autoFocus
@@ -56,7 +56,7 @@ const Login = ({ handleLogin, toggleSignup }) => {
                         required
                         fullWidth
                         name="password"
-                        label="Mot de passe"
+                        label="Password"
                         type="password"
                         id="password"
                         autoComplete="current-password"
@@ -70,19 +70,19 @@ const Login = ({ handleLogin, toggleSignup }) => {
                         color="primary"
                         sx={{ mt: 3, mb: 2 }}
                     >
-                        Se connecter
+                        Log In
                     </Button>
                 </form>
 
                 <Typography variant="body2" style={{ marginTop: '20px' }}>
-                    Pas encore de compte ?{' '}
+                    Don't have an account yet?{' '}
                     <Button
                         variant="text"
                         color="primary"
                         onClick={toggleSignup}
                         style={{ textTransform: 'none', fontWeight: 'bold' }}
                     >
-                        Créer un compte
+                        Create an Account
                     </Button>
                 </Typography>
             </Box>

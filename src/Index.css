@@ -1,4 +1,4 @@
-/* Styles globaux */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -7,11 +7,11 @@ body {
     color: #333;
 }
 
-/* Navbar */
+
 .MuiAppBar-root {
-    background-color: #007bff; /* Bleu vif pour la barre de navigation */
+    background-color: #007bff;
     color: white;
-    padding: 10px 20px; /* Ajout de padding pour espacer les éléments */
+    padding: 10px 20px;
 }
 
 .MuiTypography-h6 {
@@ -37,7 +37,7 @@ body {
     border-color: #007bff;
 }
 
-/* Style des boutons */
+
 button {
     background-color: #007bff;
     color: white;
@@ -51,10 +51,10 @@ button {
 
 button:hover {
     background-color: #0056b3;
-    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+    transform: scale(1.05);
 }
 
-/* Styles des cartes produits */
+
 .card {
     background-color: white;
     border-radius: 10px;
@@ -88,7 +88,7 @@ button:hover {
     font-size: 1rem;
 }
 
-/* Style du bouton retirer du panier */
+
 .MuiButton-containedSecondary {
     background-color: #ff4d4d;
     color: white;
@@ -98,19 +98,18 @@ button:hover {
     background-color: #e60000;
 }
 
-/* Grille pour afficher les produits */
+
 .MuiGrid-root {
     margin-top: 20px;
 }
 
-/* Titre principal */
+
 h2 {
     color: #007bff;
     text-align: center;
     margin-bottom: 30px;
 }
 
-/* Pied de page */
 footer {
     background-color: #007bff;
     color: white;
@@ -121,7 +120,7 @@ footer {
     bottom: 0;
 }
 
-/* Ajustement de la hauteur pour éviter que le footer n'empiète sur le contenu */
+
 .content {
-    padding-bottom: 60px; /* Ajoute de l'espace pour le footer */
+    padding-bottom: 60px;
 }

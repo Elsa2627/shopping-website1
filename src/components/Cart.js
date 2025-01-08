@@ -7,12 +7,12 @@ const Cart = ({ cart, removeFromCart, updateQuantity, goToCheckout, goToHome }) 
     return (
         <div style={{ padding: '20px' }}>
             <Typography variant="h4" align="center" gutterBottom>
-                Mon Panier
+                My Cart
             </Typography>
 
             {cart.length === 0 ? (
                 <Typography variant="h6" align="center" style={{ marginTop: '20px' }}>
-                    Votre panier est vide.
+                    Your cart is empty.
                 </Typography>
             ) : (
                 <Grid container spacing={4} justifyContent="center">
@@ -56,9 +56,9 @@ const Cart = ({ cart, removeFromCart, updateQuantity, goToCheckout, goToHome }) 
                                             variant="contained"
                                             color="secondary"
                                             onClick={() => removeFromCart(product.id)}
-                                            style={{ marginLeft: '0px' }} // Alignement à gauche
+                                            style={{ marginLeft: '0px' }}
                                         >
-                                            Retirer
+                                            Remove
                                         </Button>
                                     </Box>
                                 </CardContent>
@@ -73,7 +73,7 @@ const Cart = ({ cart, removeFromCart, updateQuantity, goToCheckout, goToHome }) 
                     Total : {total.toFixed(2)} USD
                 </Typography>
 
-                {/* Afficher le bouton "Payer" seulement si le panier contient des articles */}
+                {/* Display the "Pay" button only if the cart contains items.*/}
                 {cart.length > 0 && (
                     <Button
                         variant="contained"
@@ -81,23 +81,23 @@ const Cart = ({ cart, removeFromCart, updateQuantity, goToCheckout, goToHome }) 
                         style={{
                             marginTop: '20px',
                             width: '80%',
-                            backgroundColor: '#FF9900', // Couleur type Amazon
+                            backgroundColor: '#FF9900',
                             color: '#fff',
                             padding: '10px',
                             fontSize: '16px',
                             fontWeight: 'bold',
-                            borderRadius: '6px', // Coins légèrement arrondis
-                            boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.2)', // Ombre légère
-                            transition: 'background-color 0.3s ease', // Transition pour un effet au survol
+                            borderRadius: '6px',
+                            boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.2)',
+                            transition: 'background-color 0.3s ease',
                         }}
                         onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#e07b00')}
                         onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#FF9900')}
                     >
-                        Payer maintenant
+                        Pay Now
                     </Button>
                 )}
 
-                {/* Bouton "Retour à l'accueil" toujours visible */}
+                {/* "Return to Home" button always visible. */}
                 <Button
                     variant="outlined"
                     color="primary"
@@ -105,15 +105,15 @@ const Cart = ({ cart, removeFromCart, updateQuantity, goToCheckout, goToHome }) 
                     style={{
                         marginTop: '10px',
                         width: '80%',
-                        border: '1px solid #1976d2', // Bordure bleue
+                        border: '1px solid #1976d2',
                         color: '#1976d2',
                         padding: '10px',
                         fontSize: '16px',
                         fontWeight: 'bold',
-                        borderRadius: '6px', // Coins légèrement arrondis
+                        borderRadius: '6px',
                     }}
                 >
-                    Retour à l'accueil
+                    Return to Home
                 </Button>
             </Box>
         </div>

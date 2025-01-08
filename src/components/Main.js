@@ -6,7 +6,7 @@ const Main = ({ showBanner }) => {
         <>
             {showBanner && (
                 <div>
-                    {/* Titre au-dessus de la bannière */}
+                    {/* Title Above the Banner */}
                     <Typography
                         variant="h3"
                         component="h1"
@@ -21,7 +21,7 @@ const Main = ({ showBanner }) => {
                         Welcome to GoShop
                     </Typography>
 
-                    {/* Bannière en dessous */}
+                    {/* Banner Below */}
                     <Box
                         component="img"
                         sx={{
@@ -31,8 +31,8 @@ const Main = ({ showBanner }) => {
                             borderRadius: '10px',
                             boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
                         }}
-                        alt="Bannière de GoShop"
-                        src="/banner.jpg" // Assure-toi que l'image "banner.jpg" est dans le dossier public
+                        alt="GoShop Banner"
+                        src="/banner.jpg"
                     />
                 </div>
             )}

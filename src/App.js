@@ -44,25 +44,25 @@ function App() {
                             index === self.findIndex((p) => p.id === product.id)
                     );
 
-                    // Mettre à jour les produits dans le state
-                    console.log('Produits récupérés :', response.data);
+
+                    console.log('Retrieved Products :', response.data);
                     setProducts(uniqueProducts);
                     setFilteredProducts(uniqueProducts);
                     setLoading(false);
                 }
             })
             .catch((error) => {
-                console.error('Error retrieving products', error); // Affiche une erreur en cas d'échec
-                setLoading(false); // Terminer l’état de chargement même en cas d’erreur
+                console.error('Error retrieving products', error);
+                setLoading(false);
             });
 
-        // Cleanup : Evite les fuites de mémoire si le composant est démonté
+       
         return () => {
             isMounted = false;
         };
     }, []);
 
-    // Affichage d'un indicateur de chargement si les produits sont en cours de récupération
+
     if (loading) {
         return <div>Loading products...</div>;
     }

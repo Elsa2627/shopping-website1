@@ -5,12 +5,12 @@ const OrderList = ({ orders, goToHome, goToCheckout, goToCart, finalizeOrder, de
     return (
         <div style={{ padding: '20px' }}>
             <Typography variant="h4" align="center" gutterBottom>
-                Historique des commandes
+                Order History
             </Typography>
 
             {orders.length === 0 ? (
                 <Typography variant="h6" align="center" style={{ marginTop: '20px' }}>
-                    Vous n'avez pas encore passé de commande.
+                    You haven't placed any orders yet.
                 </Typography>
             ) : (
                 <Grid container spacing={4} justifyContent="center">
@@ -25,7 +25,7 @@ const OrderList = ({ orders, goToHome, goToCheckout, goToCart, finalizeOrder, de
                             >
                                 <CardContent>
                                     <Typography variant="h6">
-                                        Commande n° {order.id}
+                                        Order n° {order.id}
                                     </Typography>
                                     <Typography variant="body2">
                                         Date : {order.date}
@@ -42,20 +42,20 @@ const OrderList = ({ orders, goToHome, goToCheckout, goToCart, finalizeOrder, de
                                         USD
                                     </Typography>
                                     <Typography variant="body2">
-                                        Adresse de livraison : {order.shippingAddress}
+                                        Delivery Address: {order.shippingAddress}
                                     </Typography>
 
                                     <Typography variant="body2">
                                         Statut :{' '}
                                         {order.status === 'TEMP'
-                                            ? 'En attente de paiement'
-                                            : 'Fermée'}
+                                            ? 'Pending Payment'
+                                            : 'Closed'}
                                     </Typography>
                                     <Typography
                                         variant="body2"
                                         style={{ marginTop: '10px' }}
                                     >
-                                        Articles :
+                                        Items :
                                         {order.items.map((item) => (
                                             <span key={item.id}>
                                                 {' '}
@@ -72,7 +72,7 @@ const OrderList = ({ orders, goToHome, goToCheckout, goToCart, finalizeOrder, de
                                                 style={{ marginTop: '10px' }}
                                                 onClick={() => goToCart(order.items)}
                                             >
-                                                Modifier la commande
+                                                Edit Order
                                             </Button>
                                             <Button
                                                 variant="contained"
@@ -82,19 +82,19 @@ const OrderList = ({ orders, goToHome, goToCheckout, goToCart, finalizeOrder, de
                                                     marginLeft: '10px',
                                                 }}
                                                 onClick={() => {
-                                                    finalizeOrder(order.id); // Fermer la commande
-                                                    goToCheckout(); // Rediriger vers le paiement
+                                                    finalizeOrder(order.id);
+                                                    goToCheckout();
                                                 }}
                                             >
-                                                Payer
+                                                Pay
                                             </Button>
                                             <Button
                                                 variant="outlined"
                                                 color="secondary"
                                                 style={{ marginTop: '10px', marginLeft: '10px' }}
-                                                onClick={() => deleteOrder(order.id)} // Supprimer la commande en attente
+                                                onClick={() => deleteOrder(order.id)}
                                             >
-                                                Supprimer
+                                                Delete
                                             </Button>
                                         </div>
                                     ) : (
@@ -103,7 +103,7 @@ const OrderList = ({ orders, goToHome, goToCheckout, goToCart, finalizeOrder, de
                                             color="textSecondary"
                                             style={{ marginTop: '10px' }}
                                         >
-                                            Commande fermée (déjà payée)
+                                            Closed Order (Already Paid)
                                         </Typography>
                                     )}
                                 </CardContent>
@@ -118,7 +118,7 @@ const OrderList = ({ orders, goToHome, goToCheckout, goToCart, finalizeOrder, de
                     color="secondary"
                     onClick={goToHome}
                 >
-                    Retour à l'accueil
+                    Back to Home
                 </Button>
             </div>
         </div>

@@ -6,7 +6,7 @@ const Register = ({ handleRegister }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Simule l'inscription et passe l'email à handleRegister
+
         handleRegister(email);
     };
 
@@ -23,12 +23,12 @@ const Register = ({ handleRegister }) => {
                 <br />
                 <input
                     type="password"
-                    placeholder="Mot de passe"
+                    placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
                 <br />
-                <button type="submit">S'inscrire</button>
+                <button type="submit">Sign Up</button>
             </form>
         </div>
     );
