@@ -1,0 +1,127 @@
+/* Styles globaux */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Navbar */
+.MuiAppBar-root {
+    background-color: #007bff; /* Bleu vif pour la barre de navigation */
+    color: white;
+    padding: 10px 20px; /* Ajout de padding pour espacer les éléments */
+}
+
+.MuiTypography-h6 {
+    font-size: 1.5rem;
+}
+
+.MuiButton-root {
+    color: white;
+    margin-right: 15px;
+}
+
+/* Barre de recherche */
+.search-bar {
+    width: 250px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.search-bar:focus {
+    border-color: #007bff;
+}
+
+/* Style des boutons */
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+}
+
+/* Styles des cartes produits */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.MuiCardMedia-root {
+    height: 200px;
+    object-fit: cover;
+}
+
+.MuiCardContent-root {
+    padding: 15px;
+}
+
+.MuiTypography-h6 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.MuiTypography-body2 {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Style du bouton retirer du panier */
+.MuiButton-containedSecondary {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.MuiButton-containedSecondary:hover {
+    background-color: #e60000;
+}
+
+/* Grille pour afficher les produits */
+.MuiGrid-root {
+    margin-top: 20px;
+}
+
+/* Titre principal */
+h2 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Pied de page */
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Ajustement de la hauteur pour éviter que le footer n'empiète sur le contenu */
+.content {
+    padding-bottom: 60px; /* Ajoute de l'espace pour le footer */
+}
